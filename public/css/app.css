@@ -11,21 +11,10 @@ html {
     background-color: var(--mainColor);
     color: white;
 }
-.navbar{
-    display: flex;
-    flex-wrap: wrap;
-    top:10vw;
-    bottom: 10vw;
-    left: 0;
-    right: 0;
+.test {
+    background-color: var(--mainColor);
+}
 
-}
-.navbar p {
-
-}
-form {
-    visibility: hidden;
-}
 
 .card{
 

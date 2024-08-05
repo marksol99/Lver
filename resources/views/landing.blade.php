@@ -1,33 +1,43 @@
 <!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+<html class="text-light bg-dark" lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 
 <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="{{ asset('css/app.css') }}">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
     <title>Marken</title>
-
-    <!-- Fonts -->
-
-    <!-- Styles -->
-    <link rel="stylesheet" href="{{ asset('css/app.css') }}">
-
 </head>
 
 <body>
     <header>
-        <nav class="navbar navbar-dark bg-dark">
-            <form class="container-fluid justify-content-start">
-                <button class="btn btn-outline-success me-2" type="button" href="{{ url('/landing') }}">Main button</button>
-                <a href="{{ url('/landing') }}">
-                    <button class="btn btn-sm btn-outline-secondary" type="button">button </button>
-                </a>
-            </form>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark text-light">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <a class="navbar-brand" href="#">Marken</a>
 
+            <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+                <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="{{ url('/landing') }}">Vær</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ url('/') }}">Skjema</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link disabled" href="#">Disabled</a>
+                    </li>
+                </ul>
+            </div>
         </nav>
-        <div class="dropdown">
-            <h1>Værmelding for</h1> <button class="btn btn-secondary dropdown-toggle" style="float: right;" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">Ålesund</button>
+
+
+        <div class="dropdown text-light bg-dark d-flex align-items-center ">
+            <h1 class="me-2">Værmelding for</h1> <button class="btn btn-secondary dropdown-toggle d-inline p-2" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">Ålesund</button>
             <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
                 <li><a class="dropdown-item" href="#">Bergen</a></li>
                 <li><a class="dropdown-item" href="#">Oslo</a></li>
@@ -36,21 +46,19 @@
 
     </header>
 
-    <table class="table table-hover">
+    <table class="table table-hover ">
         <thead>
             <tr>
-                <th>
+                <th class="text-light bg-dark">
                     Temperatur
                 </th>
-                <th>
+                <th class="text-light bg-dark">
                     Vindhastighet
                 </th>
-                <th>
+                <th class="text-light bg-dark">
                     Neste time
                 </th>
-                <th>
-                    Oppdatert
-                </th>
+
             </tr>
         </thead>
         <tbody id="tableRows"></tbody>
@@ -70,7 +78,7 @@
                     const lastUpdate = entry.time;
 
 
-                    rows += `<tr><td>${airTemp}</td><td>${windSpeed}</td><td>${weatherNextHour}</td><td>${lastUpdate}</td></tr>`;
+                    rows += `<tr><td class="text-light bg-dark">${airTemp}</td><td class="text-light bg-dark">${windSpeed}</td><td class="text-light bg-dark">${weatherNextHour}</td>`;
                 } else {
                     rows += `<tr><td>Ingen Data</td></tr>`;
                 }
