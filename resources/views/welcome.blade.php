@@ -14,14 +14,16 @@
    <body>
             <header>
                 <div class="navbar" id="topNav">
-                    <div class="card" href="#weather">
+                    <a href="{{ url('/landing') }}">
+                    <div class="card">
                         <img src="https://cdn-icons-png.flaticon.com/128/16396/16396870.png">
                         <p>1</p>
                     </div>
+                    </a>
                     <div class="card" href="#person">
                         <p>2</p>
                     </div>
-
+                
 
                 </div>
             
