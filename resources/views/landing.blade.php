@@ -3,7 +3,6 @@
 
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -15,18 +14,18 @@
 <body>
     <header>
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark text-light">
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <a class="navbar-brand" href="#">Marken</a>
 
-            <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+            <div class="collapse navbar-collapse">
                 <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
                     <li class="nav-item active">
                         <a class="nav-link" href="{{ url('/landing') }}">Vær</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ url('/') }}">Skjema</a>
+                        <a class="nav-link" href="{{ url('/form') }}">Skjema</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link disabled" href="#">Disabled</a>
@@ -64,6 +63,8 @@
         <tbody id="tableRows"></tbody>
     </table>
 
+
+    {{--Lager tabell til å vise værmelding fra yr--}}
     <script>
         fetch("https://api.met.no/weatherapi/locationforecast/2.0/compact?lat=51.5&lon=0")
             .then(response => response.json())
@@ -86,9 +87,6 @@
             })
             .catch(error => console.log(error));
     </script>
-
-
-
 </body>
 
 </html>

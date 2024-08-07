@@ -19,6 +19,7 @@ html {
 .card{
 
     display: flex;
+    flex-wrap: nowrap;
     height: 25rem;
     width: 25rem;
     background-color: var(--secondaryColor);
